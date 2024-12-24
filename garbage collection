@@ -1,0 +1,42 @@
+class Employee {
+private int id; 
+private String name; 
+
+// Constructor 
+public Employee(int id, String name) { 
+this.id = id; 
+this.name = name;
+} 
+// Method to display employee details 
+public void show() { 
+System.out.println("ID: " + id + ", Name: " + name);
+} 
+// Finalize method to indicate object destruction
+@Override
+protected void finalize() throws Throwable { 
+System.out.println("Employee " + name + " is being deleted.");
+}
+} 
+public class GarbageCollectionExample { 
+public static void main(String[] args) { 
+Employee emp1 = new Employee(1, "John"); 
+Employee emp2 = new Employee(2, "Alice"); 
+
+emp1.show(); 
+emp2.show(); 
+
+/ Nullifying references to make objects eligible for garbage collection 
+emp1 = null; 
+emp2 = null; 
+
+// Requesting garbage collection 
+System.gc(); 
+
+// Adding a delay to observe the finalize method output
+try { 
+Thread.sleep(1000); // Sleep for 1 second
+} catch (InterruptedException e) {
+e.printStackTrace(); 
+} 
+}
+}
