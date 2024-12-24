@@ -1,0 +1,18 @@
+        public class MemoryManagementExample {
+            public static void main(String[] args) {
+                   // Creating objects 
+String str1 = new String("Hello");
+String str2 = new String("World"); 
+
+// Using the objects
+System.out.println(str1);
+System.out.println(str2);
+
+// Nullifying references to allow garbage collection
+str1 = null;
+str2 = null;
+
+// Suggesting garbage collection (not guaranteed) 
+System.gc(); // Request JVM to perform garbage collection 
+} 
+}
