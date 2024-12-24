@@ -1,0 +1,2 @@
+Class Loading: The JVM loads class files, generating binary data stored in the method area. Linking: This phase verifies and prepares classes by resolving symbolic references and initializing static variables
+Execution: The JVM executes bytecode using either an interpreter, which processes instructions line-by-line, or a Just-In-Time (JIT) compiler, which compiles bytecode into native machine code for efficiency
