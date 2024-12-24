@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+import java.util.List; 
+
+public class ArrayListExample { 
+    public static void main(String[] args) {
+List<String> arrayList = new ArrayList<>();
+arrayList.add("Hello"); a
+rrayList.add("Java");
+arrayList.add("World");
+System.out.println(arrayList);// Output:
+[Hello, Java, World] 
+}
+}
