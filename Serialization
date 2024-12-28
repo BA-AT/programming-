@@ -1,0 +1,42 @@
+import java.io.*;
+
+class Dog implements Serializable {
+    private String name;
+    private int age;
+
+    public Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class SerializationExample {
+    public static void main(String[] args) {
+        // Serialization
+        Dog myDog = new Dog("Buddy", 3);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("dog.ser"))) {
+            oos.writeObject(myDog);
+            System.out.println("Dog object serialized successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Deserialization
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("dog.ser"))) {
+            Dog deserializedDog = (Dog) ois.readObject();
+            System.out.println("Deserialized dog's name: " + deserializedDog.getName());
+            System.out.println("Deserialized dog's age: " + deserializedDog.getAge());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
