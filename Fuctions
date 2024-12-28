@@ -1,0 +1,21 @@
+public class Function{
+
+    // Function to add two integers
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    // Function to print a greeting message
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static void main(String[] args) {
+        // Call the add function
+        int sum = add(5, 3);
+        System.out.println("The sum is: " + sum);
+
+        // Call the greet function
+        greet("Alice");
+    }
+}
